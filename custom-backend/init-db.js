@@ -48,7 +48,7 @@ async function bootstrapDatabase() {
     `);
     console.log('>>> Schema tables successfully provisioned.');
 
-    const seedLocation = pathModule.join(__dirname, '..', 'frontend', 'seed-data.json');
+    const seedLocation = pathModule.join(__dirname, 'db-seed.json');
     const rawJson = filesystem.readFileSync(seedLocation, 'utf-8');
     const parsedData = JSON.parse(rawJson);
 
