@@ -192,6 +192,11 @@ apiApp.get('/files/:id/download', requireValidSession, async (req, res) => {
   }
 });
 
+apiApp.use((err, req, res, next) => {
+  console.error("Unhandled server error:", err);
+  res.status(500).send(err.stack || err.toString());
+});
+
 apiApp.listen(LISTENING_PORT, () => {
   console.log(`Backend API operational and listening on port ${LISTENING_PORT}`);
 });
