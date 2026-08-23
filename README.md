@@ -24,18 +24,18 @@ This environment utilizes Docker for database orchestration.
 2. **Download required Node modules:**
    \`\`\`bash
    npm install
-   \`\`\`
+   ```
 3. **Launch the PostgreSQL Container:**
-   \`\`\`bash
+   ```bash
    docker-compose up -d
-   \`\`\`
+   ```
 4. **Provision and populate the DB tables:**
-   This command reads from \`seed-data.json\` to create three distinct mock users and their associated documents.
-   \`\`\`bash
+   This command reads from `db-seed.json` to create three distinct mock users and their associated documents.
+   ```bash
    node init-db.js
-   \`\`\`
+   ```
 5. **Start the Express API server:**
-   \`\`\`bash
+   ```bash
    node server.js
    \`\`\`
    The service will boot up at \`http://localhost:3000\`.
